@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gram Sehat | Child Health Support</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                GS
+            </div>
+
+            <div>
+                <h1>Gram Sehat</h1>
+                <span>Child Health Support</span>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button onclick="showPage('home')">
+                Home
+            </button>
+
+            <button onclick="showPage('dashboard')">
+                Dashboard
+            </button>
+
+            <button onclick="showPage('tracking')">
+                Cases
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME PAGE ================= -->
+
+    <section id="home" class="page active">
+
+        <div class="hero">
+
+            <div class="hero-text">
+
+                <small>
+                    COMMUNITY CHILD HEALTH
+                </small>
+
+                <h2>
+                    Supporting ASHA Workers
+                    in Child Health Assessment
+                </h2>
+
+                <p>
+                    Gram Sehat helps frontline health workers
+                    record child symptoms, assess urgency and
+                    identify appropriate referral facilities.
+                </p>
+
+                <button
+                    class="primary"
+                    onclick="showPage('login')">
+
+                    Start Child Assessment
+
+                </button>
+
+            </div>
+
+
+            <!-- MAIN WEBSITE IMAGE -->
+
+            <div class="hero-image">
+
+               <img
+                src="./images/asha-child.jpg"
+                alt="ASHA worker caring for a child">
+            </div>
+
+        </div>
+
+
+        <!-- HOME INFORMATION -->
+
+        <div class="home-info">
+
+            <div>
+
+                <b>01</b>
+
+                <h3>
+                    Record Symptoms
+                </h3>
+
+                <p>
+                    Enter child symptoms using
+                    text or voice input.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <b>02</b>
+
+                <h3>
+                    Assess Urgency
+                </h3>
+
+                <p>
+                    Support triage using validated
+                    child-health protocols.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <b>03</b>
+
+                <h3>
+                    Refer & Track
+                </h3>
+
+                <p>
+                    Identify appropriate facilities
+                    and follow referred cases.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ASHA LOGIN ================= -->
+
+    <section id="login" class="page">
+
+        <div class="form-card">
+
+            <h2>
+                ASHA Worker Login
+            </h2>
+
+            <p class="muted">
+                Enter your details to continue.
+            </p>
+
+
+            <label>
+                Name
+            </label>
+
+            <input
+                id="workerName"
+                type="text"
+                placeholder="Enter your name">
+
+
+            <label>
+                Worker ID
+            </label>
+
+            <input
+                id="workerId"
+                type="text"
+                placeholder="Enter worker ID">
+
+
+            <button
+                class="primary full"
+                onclick="loginWorker()">
+
+                Continue
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ASHA DASHBOARD ================= -->
+
+    <section id="dashboard" class="page">
+
+        <div class="page-title">
+
+            <div>
+
+                <small>
+                    ASHA WORKER DASHBOARD
+                </small>
+
+                <h2>
+                    Welcome,
+                    <span id="dashboardName">
+                        ASHA Worker
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <button
+                class="primary"
+                onclick="showPage('assessment')">
+
+                + New Assessment
+
+            </button>
+
+        </div>
+
+
+        <!-- DASHBOARD STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <span>
+                    Total Cases
+                </span>
+
+                <strong>
+                    24
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Urgent
+                </span>
+
+                <strong>
+                    3
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Priority
+                </span>
+
+                <strong>
+                    7
+                </strong>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span>
+                    Follow-up
+                </span>
+
+                <strong>
+                    5
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT CASES -->
+
+        <div class="panel">
+
+            <h3>
+                Recent Cases
+            </h3>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Case ID
+                        </th>
+
+                        <th>
+                            Child
+                        </th>
+
+                        <th>
+                            Severity
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            GS-1024
+                        </td>
+
+                        <td>
+                            Child A
+                        </td>
+
+                        <td>
+
+                            <span class="yellow">
+                                Priority
+                            </span>
+
+                        </td>
+
+                        <td>
+                            Referred
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            GS-1023
+                        </td>
+
+                        <td>
+                            Child B
+                        </td>
+
+                        <td>
+
+                            <span class="green">
+                                Local
+                            </span>
+
+                        </td>
+
+                        <td>
+                            Completed
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CHILD ASSESSMENT ================= -->
+
+    <section id="assessment" class="page">
+
+        <div class="form-card wide">
+
+            <small>
+                CHILD HEALTH ASSESSMENT
+            </small>
+
+            <h2>
+                Child Assessment
+            </h2>
+
+            <p class="muted">
+                Enter basic information and describe
+                the child's symptoms.
+            </p>
+
+
+            <!-- CHILD INFORMATION -->
+
+            <div class="two-column">
+
+                <div>
+
+                    <label>
+                        Child Name
+                    </label>
+
+                    <input
+                        id="childName"
+                        type="text"
+                        placeholder="Enter child name">
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Age
+                    </label>
+
+                    <input
+                        id="childAge"
+                        type="number"
+                        placeholder="Age in years">
+
+                </div>
+
+            </div>
+
+
+            <!-- LANGUAGE -->
+
+            <label>
+                Select Language
+            </label>
+
+            <select id="language">
+
+                <option value="en-IN">
+                    English
+                </option>
+
+                <option value="te-IN">
+                    Telugu
+                </option>
+
+                <option value="hi-IN">
+                    Hindi
+                </option>
+
+                <option value="mr-IN">
+                    Marathi
+                </option>
+
+                <option value="ta-IN">
+                    Tamil
+                </option>
+
+                <option value="kn-IN">
+                    Kannada
+                </option>
+
+            </select>
+
+
+            <!-- TEXT SYMPTOMS -->
+
+            <label>
+                Symptoms
+            </label>
+
+            <textarea
+                id="symptoms"
+                placeholder="Type the child's symptoms here...">
+            </textarea>
+
+
+            <!-- VOICE INPUT -->
+
+            <div class="voice-box">
+
+                <button
+                    id="voiceButton"
+                    class="voice-button"
+                    onclick="startVoice()">
+
+                    🎙 Start Voice Input
+
+                </button>
+
+
+                <span id="voiceStatus">
+
+                    Select a language and speak clearly.
+
+                </span>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+
+            <div class="actions">
+
+                <button
+                    class="secondary"
+                    onclick="showPage('dashboard')">
+
+                    Back
+
+                </button>
+
+
+                <button
+                    class="primary"
+                    onclick="assessChild()">
+
+                    Continue
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TRIAGE RESULT ================= -->
+
+    <section id="result" class="page">
+
+        <div class="result-card">
+
+            <small>
+                ASSESSMENT RESULT
+            </small>
+
+            <h2>
+                Triage Result
+            </h2>
+
+
+            <div
+                id="severityBox"
+                class="severity">
+
+                <strong id="severityTitle">
+                    Assessment
+                </strong>
+
+                <p id="severityText">
+                    Result will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- RECORDED INFORMATION -->
+
+            <div class="summary">
+
+                <h3>
+                    Recorded Information
+                </h3>
+
+
+                <p>
+
+                    <b>
+                        Child:
+                    </b>
+
+                    <span id="resultChild"></span>
+
+                </p>
+
+
+                <p>
+
+                    <b>
+                        Symptoms:
+                    </b>
+
+                    <span id="resultSymptoms"></span>
+
+                </p>
+
+            </div>
+
+
+            <!-- DISCLAIMER -->
+
+            <p class="notice">
+
+                This prototype demonstrates
+                decision-support. Clinical decisions
+                must follow validated F-IMNCI protocols
+                and professional judgement.
+
+            </p>
+
+
+            <!-- RESULT ACTIONS -->
+
+            <div class="actions">
+
+                <button
+                    class="secondary"
+                    onclick="showPage('assessment')">
+
+                    Edit
+
+                </button>
+
+
+                <button
+                    class="primary"
+                    onclick="showPage('facilities')">
+
+                    Find Nearby Facility
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NEARBY FACILITIES ================= -->
+
+    <section id="facilities" class="page">
+
+        <div class="page-title">
+
+            <div>
+
+                <small>
+                    REFERRAL SUPPORT
+                </small>
+
+                <h2>
+                    Nearby Health Facilities
+                </h2>
+
+                <p class="muted">
+
+                    Demonstration facility data
+                    for the prototype.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="facility-list">
+
+
+            <!-- FACILITY 1 -->
+
+            <div class="facility">
+
+                <div>
+
+                    <h3>
+                        Primary Health Centre –
+                        Facility A
+                    </h3>
+
+                    <p>
+                        Thane District
+                    </p>
+
+                    <span>
+                        Approx. 3 km
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="primary"
+                    onclick="referCase(
+                        'Primary Health Centre – Facility A'
+                    )">
+
+                    Refer
+
+                </button>
+
+            </div>
+
+
+            <!-- FACILITY 2 -->
+
+            <div class="facility">
+
+                <div>
+
+                    <h3>
+                        Community Health Centre –
+                        Facility B
+                    </h3>
+
+                    <p>
+                        Thane District
+                    </p>
+
+                    <span>
+                        Approx. 7 km
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="primary"
+                    onclick="referCase(
+                        'Community Health Centre – Facility B'
+                    )">
+
+                    Refer
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REFERRAL CONFIRMATION ================= -->
+
+    <section id="confirmation" class="page">
+
+        <div class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Referral Recorded
+            </h2>
+
+
+            <p>
+                The case has been added to
+                the referral tracking system.
+            </p>
+
+
+            <div class="case-id">
+
+                Case ID:
+
+                <strong id="caseId">
+                </strong>
+
+            </div>
+
+
+            <p>
+
+                <b>
+                    Facility:
+                </b>
+
+                <span id="referredFacility">
+                </span>
+
+            </p>
+
+
+            <div class="actions">
+
+                <button
+                    class="secondary"
+                    onclick="showPage('dashboard')">
+
+                    Dashboard
+
+                </button>
+
+
+                <button
+                    class="primary"
+                    onclick="showPage('tracking')">
+
+                    Track Case
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CASE TRACKING ================= -->
+
+    <section id="tracking" class="page">
+
+        <div class="page-title">
+
+            <div>
+
+                <small>
+                    CASE MANAGEMENT
+                </small>
+
+                <h2>
+                    Referral Tracking
+                </h2>
+
+            </div>
+
+
+            <button
+                class="primary"
+                onclick="showPage('assessment')">
+
+                New Case
+
+            </button>
+
+        </div>
+
+
+        <div class="panel">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Case ID
+                        </th>
+
+                        <th>
+                            Child
+                        </th>
+
+                        <th>
+                            Severity
+                        </th>
+
+                        <th>
+                            Facility
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="caseTable">
+
+                    <tr>
+
+                        <td>
+                            GS-1024
+                        </td>
+
+                        <td>
+                            Child A
+                        </td>
+
+                        <td>
+
+                            <span class="yellow">
+                                Priority
+                            </span>
+
+                        </td>
+
+                        <td>
+                            PHC Facility A
+                        </td>
+
+                        <td>
+                            Referred
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <strong>
+            Gram Sehat
+        </strong>
+
+        <p>
+            Child Health Triage & Referral Support
+        </p>
+
+        <small>
+            Prototype for Smart India Hackathon
+        </small>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
